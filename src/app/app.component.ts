@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
   constructor(
     private serviceApp: AppService,
     private poNotification: PoNotificationService,
-    private poDialog: PoDialogService
+    private poDialog: PoDialogService,
   ) {}
   
 
@@ -62,11 +62,11 @@ export class AppComponent implements OnInit {
   }
   provision(item: any) {
     this.detail = item;
-    this.poModal.open();
+    this.poNotification.warning('Send Provision denied!');
   }
   permission(item: any) {
     this.detail = item;
-    this.poModal.open();
+    this.poNotification.success('Send Permission success!');
   }
   idSecret(item: any) {
     this.detail = item;
